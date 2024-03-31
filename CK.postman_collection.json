@@ -262,7 +262,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \r\n    \"name\": \"bedeb\",\r\n    \"price\":11\r\n}",
+					"raw": "{\r\n    \r\n    \"name\": \"Python\",\r\n    \"price\":11\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
