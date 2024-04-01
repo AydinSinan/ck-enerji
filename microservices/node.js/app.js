@@ -1,13 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-// MongoDB'ye bağlanma
 mongoose.connect('mongodb://127.0.0.1:27017/products')
     .then(() => console.log('MongoDB bağlantısı başarılı'))
     .catch(err => console.error('MongoDB bağlantı hatası:', err)); 
 
 
-// Ürün şeması ve modeli
 const productSchema = new mongoose.Schema({
     name: String,
     price: Number
@@ -44,7 +42,6 @@ app.get('/api/getProduct/:id', async (req, res) => {
 });
 
 
-// Ürün ekleme endpoint'i
 app.post('/api/addProduct', async (req, res) => {
     try {
         const product = new Product({
@@ -60,7 +57,6 @@ app.post('/api/addProduct', async (req, res) => {
 
 
 
-// Ürün güncelleme endpoint'i
 app.put('/api/updateProduct/:id', async (req, res) => {
     try {
         const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -74,7 +70,6 @@ app.put('/api/updateProduct/:id', async (req, res) => {
 });
 
 
-// Ürün silme endpoint'i
 app.delete('/api/deleteProduct/:id', async (req, res) => {
     try {
         const product = await Product.findByIdAndDelete(req.params.id);
