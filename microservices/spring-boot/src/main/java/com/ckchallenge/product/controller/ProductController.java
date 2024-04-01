@@ -59,4 +59,6 @@ public class ProductController {
         restTemplate.delete(nodeJsUrlWithId);
         return ResponseEntity.ok("Ürün başarıyla silindi");
     }
+
+
 }
