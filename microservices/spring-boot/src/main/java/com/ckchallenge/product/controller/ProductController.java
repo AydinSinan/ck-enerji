@@ -36,7 +36,7 @@ public class ProductController {
     @PostMapping()
     public ResponseEntity<String> addProduct(@RequestBody Product product) {
         RestTemplate restTemplate = new RestTemplate();
-        String nodeJsUrl = "http://localhost:3000/api/addProduct"; // Node.js uygulamasının URL'si
+        String nodeJsUrl = "http://localhost:3000/api/addProduct";
         ResponseEntity<String> response = restTemplate.postForEntity(nodeJsUrl, product, String.class);
         return response;
     }
